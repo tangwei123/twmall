@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: twmall-search
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.6.106:8848
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  resources:
+    static-locations: classpath:/static
+  thymeleaf:
+    cache: false
+debug: true
+server:
+  port: 8887
+
+

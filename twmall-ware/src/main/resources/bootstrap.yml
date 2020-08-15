@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.6.106:8848
+      config:
+        file-extension: yml
+        server-addr: 192.168.6.106:8848
+  profiles:
+    active: dev
+  application:
+    name: twmall-ware

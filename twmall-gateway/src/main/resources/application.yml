@@ -1,0 +1,63 @@
+spring:
+  application:
+    name: twmall-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.6.106:8848
+    gateway:
+      routes:
+        - id: twmall-coupon
+          uri: lb://twmall-coupon
+          predicates:
+            - Path=/api/coupon/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), $\{segment}
+        - id: twmall-product
+          uri: lb://twmall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), $\{segment}
+        - id: twmall-order
+          uri: lb://twmall-order
+          predicates:
+            - Path=/api/order/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), $\{segment}
+        - id: twmall-member
+          uri: lb://twmall-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), $\{segment}
+        - id: twmall-ware
+          uri: lb://twmall-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), $\{segment}
+        - id: elasticsearch
+          uri: lb://twmall-search
+          predicates:
+            - Path=/api/search/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), $\{segment}
+        - id: twmallsearchnginx
+          uri: lb://twmall-search
+          predicates:
+            - Host=search.twmall.com
+        - id: twmallmembernginx
+          uri: lb://twmall-member
+          predicates:
+            - Host=auth.twmall.com
+        - id: twmallnginx
+          uri: lb://twmall-product
+          predicates:
+            - Host=**.twmall.com
+      discovery:
+        locator:
+          enabled: true
+server:
+  port: 8088
+debug: true

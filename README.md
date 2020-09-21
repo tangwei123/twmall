@@ -1,7 +1,7 @@
 ## 商城项目
 
 ### 开发目的：
-    熟悉 spring boot + spring cloud的开发流程
+    熟悉 spring boot + spring cloud+mybatis-plus的开发流程
  
 ### 开发所涉及的知识点：
     一、基于maven的多模块聚合
@@ -11,7 +11,7 @@
         1、spring cloud alibaba nacos 做为注册中心和配置中心的使用
         2、spring cloud openFeign的调用远程服务
         3、spring cloud gateway做为路由调用nacos的远程服务
-    五、商城开发的3大法宝
+    五、高并发开发的3大法宝
         1、缓存技术，redis
             ①、远程redis的使用
                 缓存穿透
@@ -59,5 +59,11 @@
     
     八、基于elasticSearch的全文搜索服务
         开发步骤，一般为先设计每个doc的数据类型，然后是做存入数据，搜索数据（聚合数据）
+    
+    九、spring-cloud-starter-alibaba-seata分布式事务的解决方案
+    
+    十、spring-session-data-redis session存储到redis的解决方案
+    
+    十一、spring boot的计划任务的使用@EnableSchduling
     
                

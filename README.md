@@ -1,5 +1,7 @@
 ## 商城项目
 
+### 目前进度开发中...
+
 ### 开发目的：
     熟悉 spring boot + spring cloud+mybatis-plus的开发流程
  
